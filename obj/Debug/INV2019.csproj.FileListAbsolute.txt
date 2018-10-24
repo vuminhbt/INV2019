@@ -1,0 +1,17 @@
+D:\Minh\Projects\CShap\INV2019\INV2019\bin\Debug\INV2019.exe.config
+D:\Minh\Projects\CShap\INV2019\INV2019\bin\Debug\INV2019.exe
+D:\Minh\Projects\CShap\INV2019\INV2019\bin\Debug\INV2019.pdb
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.csproj.ResolveComReference.cache
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.frmLogin.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.frmLogout.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.frmMain.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.Properties.Resources.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.UC.uc_InOut.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.UC.uc_InOut_Export_Excel.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.UC.uc_Login.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.UC.uc_Trantport_Manager.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.UC.uc_User_Manager.resources
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.csproj.GenerateResource.cache
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.csproj.CoreCompileInputs.cache
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.exe
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.pdb
