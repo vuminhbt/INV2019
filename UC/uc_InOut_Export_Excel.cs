@@ -103,7 +103,7 @@ namespace INV2019.UC
                     search = "WHERE " + search;
                 }
                 DataSet ds = new DataSet();
-                string strQuery = string.Format("SELECT i.ID, t.BARCODE as[Mã Vạch], t.CARNUMBER as[Biển Số], i.TIMEIN as[Giờ Vào], i.TIMEOUT as[Giờ Ra],IIf([i.TIMEOUT] is null, null, Format((cdate(i.TIMEOUT) - cdate(i.TIMEIN)),'hh:mm:ss')) as [Tổng Thời Gian(HH:MM:SS)], i.DESCRIPTION as[Mô Tả] FROM tblInOutINV i INNER JOIN tblTrantportInfo t ON i.TRANTID = t.ID {0} order by i.ID desc;", search);
+                string strQuery = string.Format("SELECT i.ID, t.BARCODE as[Mã Vạch], t.CARNUMBER as[Biển Số],t.COMPANY as[Công Ty], i.TIMEIN as[Giờ Vào], i.TIMEOUT as[Giờ Ra],IIf([i.TIMEOUT] is null, null, Format((cdate(i.TIMEOUT) - cdate(i.TIMEIN)),'hh:mm:ss')) as [Tổng Thời Gian(HH:MM:SS)], i.DESCRIPTION as[Mô Tả] FROM tblInOutINV i INNER JOIN tblTrantportInfo t ON i.TRANTID = t.ID {0} order by i.ID desc;", search);
                 ds = DBHelper.ExecuteDataset(Program.conString(), CommandType.Text, strQuery);
                 dataGridView1.DataSource = ds.Tables[0];
 
@@ -113,14 +113,16 @@ namespace INV2019.UC
                 dataGridView1.Columns[3].ReadOnly = true;
                 dataGridView1.Columns[4].ReadOnly = true;
                 dataGridView1.Columns[5].ReadOnly = true;
-                
+                dataGridView1.Columns[6].ReadOnly = true;
+
                 dataGridView1.Columns[0].Width = 50;
                 dataGridView1.Columns[1].Width = 200;
                 dataGridView1.Columns[2].Width = 150;
-                dataGridView1.Columns[3].Width = 200;
-                dataGridView1.Columns[4].Width = 200;
-                dataGridView1.Columns[5].Width = 250;
-                dataGridView1.Columns[6].Width = 400;
+                dataGridView1.Columns[3].Width = 150;
+                dataGridView1.Columns[4].Width = 150;
+                dataGridView1.Columns[5].Width = 200;
+                dataGridView1.Columns[6].Width = 200;
+                dataGridView1.Columns[7].Width = 350;
 
                 DataGridViewCheckBoxColumn checkboxColumn = new DataGridViewCheckBoxColumn();
                 checkboxColumn.Width = 30;
@@ -180,10 +182,10 @@ namespace INV2019.UC
         {
             try
             {
-                if (e.ColumnIndex == 7 && e.RowIndex >= 0)
+                if (e.ColumnIndex == 8 && e.RowIndex >= 0)
                 {
                     int bid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString());
-                    var des = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                    var des = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
                     string strQuery = @"Update tblInOutINV set DESCRIPTION ='" + des + "' where ID=" + bid;
                     if (DBHelper.ExecuteNonQuery(Program.conString(), CommandType.Text, strQuery) > 0)
                         loaddata(txtBarcode.Text, txtCarnumber.Text, dtFrom.Text, dTo.Text);

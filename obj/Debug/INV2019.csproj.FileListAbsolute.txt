@@ -1,7 +1,6 @@
 D:\Minh\Projects\CShap\INV2019\INV2019\bin\Debug\INV2019.exe.config
 D:\Minh\Projects\CShap\INV2019\INV2019\bin\Debug\INV2019.exe
 D:\Minh\Projects\CShap\INV2019\INV2019\bin\Debug\INV2019.pdb
-D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.csprojAssemblyReference.cache
 D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.csproj.ResolveComReference.cache
 D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.frmLogin.resources
 D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.frmLogout.resources

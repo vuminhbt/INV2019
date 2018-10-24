@@ -51,12 +51,14 @@ namespace INV2019
                 this.login_StripMenuItem1.Visible = false;
                 this.logout_StripMenuItem1.Visible = true;
                 this.toolsToolStripMenuItem.Visible = true;
+                this.urser_ToolStripMenuItem.Visible = false;
             }
             else
             {
                 this.login_StripMenuItem1.Visible = true;
                 this.logout_StripMenuItem1.Visible = false;
                 this.toolsToolStripMenuItem.Visible = false;
+                this.urser_ToolStripMenuItem.Visible = false;
             }
         }
         public void LogInYes(Form form)
