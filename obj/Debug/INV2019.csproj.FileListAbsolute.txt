@@ -15,3 +15,4 @@ D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.csproj.GenerateResource
 D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.csproj.CoreCompileInputs.cache
 D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.exe
 D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.pdb
+D:\Minh\Projects\CShap\INV2019\INV2019\obj\Debug\INV2019.csprojAssemblyReference.cache
