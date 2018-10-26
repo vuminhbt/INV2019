@@ -103,7 +103,7 @@ namespace INV2019.UC
                     search = "WHERE " + search;
                 }
                 DataSet ds = new DataSet();
-                string strQuery = string.Format("SELECT i.ID, t.BARCODE as[Mã Vạch], t.CARNUMBER as[Biển Số],t.COMPANY as[Công Ty], i.TIMEIN as[Giờ Vào], i.TIMEOUT as[Giờ Ra],IIf([i.TIMEOUT] is null, null, Format((cdate(i.TIMEOUT) - cdate(i.TIMEIN)),'hh:mm:ss')) as [Tổng Thời Gian(HH:MM:SS)], i.DESCRIPTION as[Mô Tả] FROM tblInOutINV i INNER JOIN tblTrantportInfo t ON i.TRANTID = t.ID {0} order by i.ID desc;", search);
+                string strQuery = string.Format("SELECT i.ID, t.BARCODE as[Mã Vạch], t.CARNUMBER as[Biển Số],t.COMPANY as[Công Ty], i.TIMEIN as[Giờ Vào], i.TIMEOUT as[Giờ Ra],  IIf([i.TIMEOUT] is null, null, Format( DateDiff('h',[i.TIMEIN],[i.TIMEOUT]) & ':' & DateDiff('n',[i.TIMEIN],[i.TIMEOUT]) Mod 60 , 'hh:nn')  ) as [TotalTime HH:MM], i.DESCRIPTION as[Mô Tả] FROM tblInOutINV i INNER JOIN tblTrantportInfo t ON i.TRANTID = t.ID {0} order by i.ID desc;", search);
                 ds = DBHelper.ExecuteDataset(Program.conString(), CommandType.Text, strQuery);
                 dataGridView1.DataSource = ds.Tables[0];
 

@@ -1,4 +1,3 @@
 SELECT i.ID, t.BARCODE, t.CARNUMBER, i.TIMEIN, i.TIMEOUT,
-IIf([i.TIMEOUT] is null, null, Format((cdate(i.TIMEOUT) - cdate(i.TIMEIN)),'hh:mm:ss') )
-
-as [TotalTime(HH:MM:SS)],i.DESCRIPTION FROM tblInOutINV i INNER JOIN tblTrantportInfo t ON i.TRANTID = t.ID WHERE(Format(i.TIMEIN, 'dd/MM/yyyy')) = '22/10/2018' or i.TIMEOUT is null;
+IIf([i.TIMEOUT] is null, null, Format( DateDiff('h',[i.TIMEIN],[i.TIMEOUT]) & ':' & DateDiff('n',[i.TIMEIN],[i.TIMEOUT]) Mod 60 , 'hh:nn')  ) as [TotalTime HH:MM],
+i.DESCRIPTION FROM tblInOutINV i INNER JOIN tblTrantportInfo t ON i.TRANTID = t.ID WHERE(Format(i.TIMEIN, "dd/MM/yyyy")) = '25/10/2018' or i.TIMEOUT is null

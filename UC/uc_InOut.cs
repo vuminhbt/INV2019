@@ -41,7 +41,7 @@ namespace INV2019.UC
             {
                 ActiveControl = textBox1;
                 DataSet ds = new DataSet();
-                string strQuery = string.Format("SELECT i.ID, t.BARCODE as[Mã Vạch], t.CARNUMBER as[Biển Số], i.TIMEIN as[Giờ Vào], i.TIMEOUT as[Giờ Ra],IIf([i.TIMEOUT] is null, null, Format((cdate(i.TIMEOUT) - cdate(i.TIMEIN)),'hh:mm:ss')) as [Tổng Thời Gian(HH:MM:SS)],i.DESCRIPTION as[Mô Tả] FROM tblInOutINV i INNER JOIN tblTrantportInfo t ON i.TRANTID = t.ID WHERE (Format(i.TIMEIN, 'dd/MM/yyyy')) = '{0}' or i.TIMEOUT is null order by i.ID desc;", date);
+                string strQuery = string.Format("SELECT i.ID, t.BARCODE as[Mã Vạch], t.CARNUMBER as[Biển Số], i.TIMEIN as[Giờ Vào], i.TIMEOUT as[Giờ Ra],  IIf([i.TIMEOUT] is null, null, Format( DateDiff('h',[i.TIMEIN],[i.TIMEOUT]) & ':' & DateDiff('n',[i.TIMEIN],[i.TIMEOUT]) Mod 60 , 'hh:nn')  ) as [TotalTime HH:MM], i.DESCRIPTION as[Mô Tả] FROM tblInOutINV i INNER JOIN tblTrantportInfo t ON i.TRANTID = t.ID WHERE (Format(i.TIMEIN, 'dd/MM/yyyy')) = '{0}' or i.TIMEOUT is null order by i.ID desc;", date);
                 ds = DBHelper.ExecuteDataset(Program.conString(), CommandType.Text, strQuery);
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[0].ReadOnly = true;
